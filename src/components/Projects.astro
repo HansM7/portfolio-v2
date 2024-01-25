@@ -1,0 +1,67 @@
+---
+import CardProjects from "./CardProjects.astro";
+
+const projects = [
+  {
+    image:
+      "https://as2.ftcdn.net/v2/jpg/03/03/64/75/1000_F_303647589_vJas78hKI4r0vIeVxA6bZD5IjhxNA1Kw.jpg",
+    title: "Random title",
+  },
+  {
+    image:
+      "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2021/03/horizontal-lines-photography-3.jpg?resize=1500%2C842&ssl=1",
+    title: "Random title",
+  },
+];
+---
+
+<section class="w-full">
+  <div class="px-16 py-8 w-full flex flex-col pb-60">
+    <header class="w-full flex justify-center">
+      <h2
+        class="text-[4rem] dark:text-white text-center w-fit border-b-4 border-purple-400"
+      >
+        Projects
+      </h2>
+    </header>
+    <div class="flex flex-row items-center font-bold mt-8">
+      <div class="flex flex-col font-extralight items-center">
+        <div class="w-full px-52 text-center">
+          <p class="dark:text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+            repellendus eius quos maiores repudiandae, possimus amet ea rem
+            inventore, quaerat numquam tenetur consequuntur deleniti! Architecto
+            accusantium at dolorem natus optio?
+          </p>
+        </div>
+        <div class="flex flex-col mt-8 w-full">
+          <div class="flex flex-row gap-2 justify-center">
+            <button
+              class="px-4 py-2 rounded-md border border-transparent bg-purple-600"
+              >All</button
+            >
+            <button
+              class="px-4 py-2 rounded-md border border-purple-600 text-white"
+              >Frontend</button
+            >
+            <button
+              class="px-4 py-2 rounded-md border border-purple-600 text-white"
+              >Backend</button
+            >
+            <button
+              class="px-4 py-2 rounded-md border border-purple-600 text-white"
+              >Design</button
+            >
+          </div>
+          <!-- items -->
+          <div class="flex flex-wrap mt-8 gap-6">
+            <CardProjects />
+            <CardProjects />
+            <CardProjects />
+            <CardProjects />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

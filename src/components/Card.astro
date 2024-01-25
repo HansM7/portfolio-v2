@@ -1,0 +1,19 @@
+---
+const { title, icon, description } = Astro.props;
+---
+
+<div
+  class="rounded-md shadow-md border dark:border-purple-400 border-slate-700 max-w-[16rem] p-2 h-fit"
+>
+  <div class="flex gap-4">
+    <div class="rounded-lg p-1 bg-sky-300 opacity-50">
+      <img width="28" src={icon} alt="" />
+    </div>
+    <span class="text-xl dark:text-purple-500">{title}</span>
+  </div>
+  <div class="mt-2">
+    <p class="dark:text-slate-400">
+      {description}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+const { title, description, image, option } = Astro.props;
+let bg;
+if (option === "0") bg = "bg-black";
+if (option === "1") bg = "bg-white";
+if (option === "2") bg = "bg-sky-600";
+if (option === "3") bg = "bg-orange-600";
+---
+
+<div
+  class="group flex flex-col w-[18rem] border rounded-lg p-2 border-purple-700 transition-all"
+>
+  <div class=`${bg} p-2 rounded-md w-fit  `>
+    <img width="36" src={image} alt="" />
+  </div>
+  <h3 class="dark:text-white mt-2 transition-all">{title}</h3>
+  <p class="dark:text-slate-600">
+    {description}
+  </p>
+</div>
