@@ -1,3 +1,9 @@
+---
+function openPdf() {
+  console.log("Hello");
+}
+---
+
 <section class="w-full">
   <div class="px-14 py-8 w-full flex flex-row">
     <div class="">
@@ -10,30 +16,31 @@
         Full Stack Developer
       </h1>
       <p class="text-xl dark:text-slate-400 text-slate-700">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim provident
-        quidem consectetur vel minima quasi sed incit, quasi porro.
+        Apasionado por las tecnologías de información y el desarrollo web
+        creando soluciones digitales seguras y eficientes, comprometido con el
+        aprendizaje continuo.
       </p>
       <div class="flex flex-row gap-4 mt-8 items-center opacity-55">
         <span class="dark:text-white">Redes sociales:</span>
-        <a href="">
+        <a href="https://www.instagram.com/is_hanss/" target="_blank">
           <img
             class="dark:invert"
             width="24"
             height="24"
             src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"
-            alt=""
+            alt="instagram"
           />
         </a>
-        <a href="">
+        <a href="https://github.com/HansM7" target="_blank">
           <img
             class="dark:invert"
             width="24"
             height="24"
             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-            alt=""
+            alt="github"
           />
         </a>
-        <a href="">
+        <a href="mailto:hansmelchor@gmail.com" target="_blank">
           <img
             class="dark:invert"
             width="24"
@@ -44,10 +51,8 @@
         </a>
       </div>
       <div class="mt-8">
-        <button class="px-4 py-2 bg-purple-600 rounded-md text-white"
-          >Soliting</button
-        >
         <button
+          id="btn-open"
           class="px-4 py-2 border border-purple-600 rounded-md dark:text-white"
           >Download cv</button
         >
@@ -56,4 +61,12 @@
   </div>
 </section>
 
-<style></style>
+<script>
+  const btn = document.querySelector("#btn-open");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const fileUrl = "hans-cv.pdf";
+      window.open(fileUrl, "_blank");
+    });
+  }
+</script>

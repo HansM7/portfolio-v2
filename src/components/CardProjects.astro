@@ -1,28 +1,23 @@
 ---
-const { title, image } = Astro.props;
+const { title, image, repo, description } = Astro.props;
 ---
 
-<div class="border border-purple-600 overflow-hidden w-fit rounded-md">
-  <div class="overflow-hidden">
-    <img
-      class="w-auto max-w-[20rem] overflow-hidden hover:scale-125 transition-all"
-      src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2021/03/horizontal-lines-photography-3.jpg?resize=1500%2C842&ssl=1"
-      alt=""
-    />
-  </div>
-  <div class="flex flex-row justify-between items-center w-full py-2 px-1">
-    <div class="flex flex-col gap-2">
-      <h6 class="w-fit dark:text-white">Title</h6>
-      <span class="dark:text-slate-300 text-sm">Description app</span>
-    </div>
-    <a class="p-1 rounded-full bg-purple-600" href="">
+<a href={repo} target="_blank">
+  <div
+    class="border border-purple-600 overflow-hidden max-w-[20rem] rounded-md"
+  >
+    <div class="overflow-hidden">
       <img
-        class="invert"
-        width="24"
-        height="24"
-        src="https://cdn-icons-png.flaticon.com/512/109/109681.png"
+        class="w-auto max-w-[20rem] overflow-hidden hover:scale-125 transition-all"
+        src={image}
         alt=""
       />
-    </a>
+    </div>
+    <div class="flex justify-between items-center w-full py-2 px-1">
+      <div class="flex flex-col gap-2">
+        <h6 class="w-fit dark:text-white">{title}</h6>
+        <span class="dark:text-slate-400 text-sm">{description}</span>
+      </div>
+    </div>
   </div>
-</div>
+</a>

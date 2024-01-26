@@ -4,34 +4,44 @@ import CardProjects from "./CardProjects.astro";
 const projects = [
   {
     image:
-      "https://as2.ftcdn.net/v2/jpg/03/03/64/75/1000_F_303647589_vJas78hKI4r0vIeVxA6bZD5IjhxNA1Kw.jpg",
-    title: "Random title",
+      "https://miro.medium.com/v2/resize:fit:840/1*b21FyqUbowHYAOQDXH0tDw.jpeg",
+    repo: "https://github.com/HansM7/app-cards-ui.git",
+    title: "Cards UI",
+    description: "Aplicación de ui para cards basados en tailwindcss",
   },
   {
     image:
-      "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2021/03/horizontal-lines-photography-3.jpg?resize=1500%2C842&ssl=1",
-    title: "Random title",
+      "https://miro.medium.com/v2/resize:fit:840/1*b21FyqUbowHYAOQDXH0tDw.jpeg",
+    repo: "https://github.com/HansM7/api-postgresql-validators-nodejs",
+    title: "Validators Nodejs/Typescript",
+    description:
+      "Validadores de schemas basados en class-validator y class-transformer",
+  },
+  {
+    image:
+      "https://miro.medium.com/v2/resize:fit:840/1*b21FyqUbowHYAOQDXH0tDw.jpeg",
+    repo: "https://github.com/HansM7/chat_realtime_mern",
+    title: "Chat en tiempo real",
+    description: "Aplicación de chat en tiempo real aplicando el stack MERN",
   },
 ];
 ---
 
-<section class="w-full">
-  <div class="px-16 py-8 w-full flex flex-col pb-60">
+<section class="w-full pb-12">
+  <div class="px-16 py-8 w-full flex flex-col">
     <header class="w-full flex justify-center">
       <h2
         class="text-[4rem] dark:text-white text-center w-fit border-b-4 border-purple-400"
       >
-        Projects
+        Proyectos
       </h2>
     </header>
     <div class="flex flex-row items-center font-bold mt-8">
       <div class="flex flex-col font-extralight items-center">
         <div class="w-full px-52 text-center">
           <p class="dark:text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-            repellendus eius quos maiores repudiandae, possimus amet ea rem
-            inventore, quaerat numquam tenetur consequuntur deleniti! Architecto
-            accusantium at dolorem natus optio?
+            A lo largo de mi carrera he ido practicando y aprendiendo, esta es
+            una recopilacion de los proyectos y repositorios que he realizado
           </p>
         </div>
         <div class="flex flex-col mt-8 w-full">
@@ -54,11 +64,17 @@ const projects = [
             >
           </div>
           <!-- items -->
-          <div class="flex flex-wrap mt-8 gap-6">
-            <CardProjects />
-            <CardProjects />
-            <CardProjects />
-            <CardProjects />
+          <div class="flex flex-wrap justify-center mt-8 gap-6">
+            {
+              projects.map((item, index) => (
+                <CardProjects
+                  title={item.title}
+                  repo={item.repo}
+                  image={item.image}
+                  description={item.description}
+                />
+              ))
+            }
           </div>
         </div>
       </div>
