@@ -18,40 +18,53 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+
     <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet" />
     <ViewTransitions />
   </head>
-  <body>
+  <body class="">
     <main class="dark:bg-slate-900">
       <Header />
       <slot />
     </main>
-  </body><style is:global>
-    @font-face {
-      font-family: "Product Sans Medium";
-      src: url("https://fonts.cdnfonts.com/css/google-sans") format("format");
-    }
-    body {
-      scroll-behavior: smooth;
-      font-family: "Product Sans Medium";
-      font-style: normal;
-    }
-    body::-webkit-scrollbar {
-      width: 8px; /* Ancho del scrollbar */
-    }
+    <style is:global>
+      @font-face {
+        font-family: "Product Sans Medium";
+        src: url("https://fonts.cdnfonts.com/css/google-sans") format("format");
+      }
+      body {
+        scroll-behavior: smooth;
+        font-family: "Product Sans Medium";
+        font-style: normal;
+        /* min-width: 100%; */
+        /* overflow-x: hidden; */
+      }
+      body::-webkit-scrollbar {
+        width: 8px; /* Ancho del scrollbar */
+      }
 
-    body::-webkit-scrollbar-thumb {
-      background-color: #575555;
-      border-radius: 4px;
-    }
+      body::-webkit-scrollbar-thumb {
+        background-color: #575555;
+        border-radius: 4px;
+      }
 
-    body::-webkit-scrollbar-track {
-      background-color: rgb(17 24 39);
-    }
+      body::-webkit-scrollbar-track {
+        background-color: rgb(17 24 39);
+      }
 
-    /* Estilos adicionales para el scrollbar cuando se pasa el mouse sobre él */
-    /* body::-webkit-scrollbar-thumb:hover {
+      /* Estilos adicionales para el scrollbar cuando se pasa el mouse sobre él */
+      /* body::-webkit-scrollbar-thumb:hover {
     background-color: #555;
   } */
-  </style>
+      @media (max-width: 672px) {
+        body {
+          min-width: 100vh;
+        }
+      }
+    </style>
+  </body>
 </html>

@@ -11,13 +11,19 @@ import Card from "./Card.astro";
         Sobre mi
       </h2>
     </header>
-    <div class="flex flex-row items-center font-bold mt-8">
-      <div class="px-20">
+    <div
+      class="flex sm:flex-col md:flex-row flex-col items-center font-bold mt-8"
+    >
+      <div class="px-20 text-center md:mb-0 mb-8">
         <h1 class="dark:text-white text-[8rem]">+1</h1>
-        <h3 class="dark:text-slate-400">Trabajando en desarrollo web</h3>
+        <h3 class="dark:text-slate-400 sm:text-xl">
+          Trabajando en desarrollo web
+        </h3>
       </div>
       <div class="flex flex-col">
-        <p class="dark:text-white text-xl font-extralight">
+        <p
+          class="dark:text-white text-xl font-extralight md:text-left text-center"
+        >
           Ingeniero de Sistemas, especializado en <span class="text-purple-500"
             >desarrollo web y móvil</span
           > . Mis habilidades radican en la creación de soluciones digitales innovadoras
@@ -29,7 +35,7 @@ import Card from "./Card.astro";
           sus metas digitales, proporcionando soluciones de alta calidad en el sector
           digital.
         </p>
-        <div class="flex flex-wrap mt-8 gap-6">
+        <div class="flex flex-wrap mt-8 gap-6 md:justify-start justify-center">
           <Card
             title="Frontend"
             icon="https://cdn-icons-png.flaticon.com/512/1157/1157109.png"
