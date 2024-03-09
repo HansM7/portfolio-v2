@@ -3,16 +3,15 @@ import CardProjects from "./CardProjects.astro";
 
 const projects = [
   {
-    image:
-      "https://miro.medium.com/v2/resize:fit:840/1*b21FyqUbowHYAOQDXH0tDw.jpeg",
-    repo: "https://github.com/HansM7/app-cards-ui.git",
+    image: "images/cards-ui.png",
+    repo: "https://app-cards.vercel.app/",
     title: "Cards UI",
-    description: "Aplicación de ui para cards basados en tailwindcss",
+    description:
+      "Aplicación de cards utilizando tailwindcss en el ambiente de UI y Nextjs",
   },
   {
     image:
       "https://miro.medium.com/v2/resize:fit:840/1*b21FyqUbowHYAOQDXH0tDw.jpeg",
-    repo: "https://github.com/HansM7/api-postgresql-validators-nodejs",
     title: "Validators Nodejs/Typescript",
     description:
       "Validadores de schemas basados en class-validator y class-transformer",
@@ -24,59 +23,68 @@ const projects = [
     title: "Chat en tiempo real",
     description: "Aplicación de chat en tiempo real aplicando el stack MERN",
   },
+
+  {
+    image:
+      "https://miro.medium.com/v2/resize:fit:840/1*b21FyqUbowHYAOQDXH0tDw.jpeg",
+    repo: " https://github.com/HansM7/react-native-ecommerce.git",
+    title: "App móvil Ecommerce",
+    description:
+      "Aplicación movil ecommerce utlizando React Native y Firebase para la permanencia de datos.",
+  },
 ];
 ---
 
 <section class="w-full pb-12">
-  <div class="px-16 py-8 w-full flex flex-col">
+  <div class="md:px-16 px-8 py-8 w-full flex flex-col">
     <header class="w-full flex justify-center">
       <h2
-        class="text-[4rem] dark:text-white text-center w-fit border-b-4 border-purple-400"
+        class="md:text-[4rem] text-[3rem] dark:text-white text-center w-fit border-b-4 border-purple-400"
       >
         Proyectos
       </h2>
     </header>
-    <div class="flex flex-row items-center font-bold mt-8">
-      <div class="flex flex-col font-extralight items-center">
-        <div class="w-full md:px-52 px-12 text-center">
-          <p class="dark:text-white">
-            A lo largo de mi carrera he ido practicando y aprendiendo, esta es
-            una recopilacion de los proyectos y repositorios que he realizado
-          </p>
+  </div>
+  <div class="flex flex-row items-center font-bold mt-4 justify-center">
+    <div class="flex flex-col font-extralight items-center">
+      <div class="w-full md:px-52 px-12 text-center">
+        <p class="dark:text-white">
+          A lo largo de mi carrera he ido practicando y aprendiendo, esta es una
+          recopilacion de los proyectos y repositorios que he realizado
+        </p>
+      </div>
+      <div class="flex flex-col mt-8 w-full">
+        <div class="flex flex-row gap-2 justify-center">
+          <button
+            class="px-4 py-2 rounded-md border border-transparent bg-purple-600"
+            >All</button
+          >
+          <button
+            class="px-4 py-2 rounded-md border border-purple-600 text-white"
+            >Frontend</button
+          >
+          <button
+            class="px-4 py-2 rounded-md border border-purple-600 text-white"
+            >Backend</button
+          >
+          <button
+            class="px-4 py-2 rounded-md border border-purple-600 text-white"
+            >Design</button
+          >
         </div>
-        <div class="flex flex-col mt-8 w-full">
-          <div class="flex flex-row gap-2 justify-center">
-            <button
-              class="px-4 py-2 rounded-md border border-transparent bg-purple-600"
-              >All</button
-            >
-            <button
-              class="px-4 py-2 rounded-md border border-purple-600 text-white"
-              >Frontend</button
-            >
-            <button
-              class="px-4 py-2 rounded-md border border-purple-600 text-white"
-              >Backend</button
-            >
-            <button
-              class="px-4 py-2 rounded-md border border-purple-600 text-white"
-              >Design</button
-            >
-          </div>
-          <!-- items -->
-          <div class="flex flex-wrap justify-center mt-8 gap-6">
-            {
-              projects.map((item, index) => (
-                <CardProjects
-                  key={index}
-                  title={item.title}
-                  repo={item.repo}
-                  image={item.image}
-                  description={item.description}
-                />
-              ))
-            }
-          </div>
+        <!-- items -->
+        <div class="flex flex-wrap justify-center mt-8 gap-6">
+          {
+            projects.map((item, index) => (
+              <CardProjects
+                key={index}
+                title={item.title}
+                repo={item.repo}
+                image={item.image}
+                description={item.description}
+              />
+            ))
+          }
         </div>
       </div>
     </div>
